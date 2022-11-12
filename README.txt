@@ -1,4 +1,11 @@
-The Petri-net is made by the students of Prince Sattam Bin Abdulaziz University
+About the project:
+The project is to design a Petri-net for a real world traffic-light system.
+
+The goal of this project:
+improve skills in designing Petri-net models.
+
+
+made by the students of Prince Sattam Bin Abdulaziz University
 - Talal Albraik 
 - Saleh Alyouni
 
