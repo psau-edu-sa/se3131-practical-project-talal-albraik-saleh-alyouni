@@ -1,0 +1,70 @@
+.name "Final-Solution"
+.type PN
+
+.places
+2(1)RED
+Switch
+5.1(1)GREEN
+1(1)GREEN
+2(1)GREEN
+1(1)RED
+5.1(2)RED
+5.4GREEN
+5.3GREEN
+5.4RED
+5.3RED
+1(2)RED
+5.1(1)RED
+1(2)GREEN
+5.1(2)GREEN
+5.4--RED
+5.4GREEN
+3RED
+4RED
+4GREEN
+3--GREEN
+Next-Light
+Switch
+Switch
+Next-Light
+Next-Light
+Reset
+Switch
+5.3RED
+2(2)RED
+5.3GREEN
+2(2)GREEN
+5.1(1)RED
+5.1(1)GREEN
+5.1(2)RED
+5.1(2)GREEN
+
+.transitions
+G(to)R
+R(to)G
+G(to)R
+R(to)G
+G(to)R
+R(to)G
+R(to)G
+G(to)R
+Starting
+Starting
+Starting
+Resetting
+
+.flows
+G(to)R: {1*2(1)GREEN, 1*5.4GREEN, 1*2(2)GREEN, 1*5.3GREEN} -> {1*2(1)RED, 1*5.4--RED, 1*Next-Light, 1*2(2)RED, 1*5.3RED}
+R(to)G: {1*5.4--RED, 1*2(1)RED, 1*Switch, 1*5.3RED, 1*2(2)RED} -> {1*2(1)GREEN, 1*5.4GREEN, 1*5.3GREEN, 1*2(2)GREEN}
+G(to)R: {1*1(1)GREEN, 1*5.1(1)GREEN, 1*1(2)GREEN, 1*5.1(2)GREEN} -> {1*1(1)RED, 1*5.1(2)RED, 1*5.1(1)RED, 1*1(2)RED, 1*Next-Light}
+R(to)G: {1*1(1)RED, 1*5.1(2)RED, 1*1(2)RED, 1*5.1(1)RED, 1*Switch} -> {1*1(1)GREEN, 1*5.1(1)GREEN, 1*1(2)GREEN, 1*5.1(2)GREEN}
+G(to)R: {1*3--GREEN, 1*5.3GREEN, 1*5.1(1)GREEN} -> {1*3RED, 1*Next-Light, 1*5.3RED, 1*5.1(1)RED}
+R(to)G: {1*3RED, 1*Switch, 1*5.3RED, 1*5.1(1)RED} -> {1*3--GREEN, 1*5.3GREEN, 1*5.1(1)GREEN}
+R(to)G: {1*4RED, 1*Switch, 1*5.4RED, 1*5.1(2)RED} -> {1*4GREEN, 1*5.4GREEN, 1*5.1(2)GREEN}
+G(to)R: {1*4GREEN, 1*5.4GREEN, 1*5.1(2)GREEN} -> {1*4RED, 1*Reset, 1*5.4RED, 1*5.1(2)RED}
+Starting: {1*Next-Light} -> {1*Switch}
+Starting: {1*Next-Light, 1*5.1(1)RED, 1*5.3RED} -> {1*Switch, 1*5.1(1)RED, 1*5.3RED}
+Starting: {1*Next-Light, 1*5.1(2)RED} -> {1*Switch, 1*5.1(2)RED}
+Resetting: {1*Reset, 1*5.1(1)RED, 1*5.1(2)RED, 1*5.3RED} -> {1*Switch, 1*5.1(1)RED, 1*5.1(2)RED, 1*5.3RED}
+
+.initial_marking {1*2(1)RED, 1*1(1)RED, 1*5.1(2)RED, 1*5.4RED, 1*1(2)RED, 1*5.1(1)RED, 1*5.4--RED, 1*3RED, 1*4RED, 1*Switch, 1*5.3RED, 1*2(2)RED}
