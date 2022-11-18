@@ -24,3 +24,8 @@ The signal in Lane 3 can be green and the rest of the signals are red
 The signal in Lane 4 can be green and the rest of the lights are red
 Signs must be in order
 Traffic lights in lane 5 reflect another signal
+
+ # demonstration to the system by steps:
+ ![](https://raw.githubusercontent.com/psau-edu-sa/se3131-practical-project-talal-albraik-saleh-alyouni/main/Petri-net%20Steps/Petri-net-Steps.gif)
+
+
